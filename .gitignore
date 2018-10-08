@@ -1,4 +1,7 @@
 env/
 __pycache__
-.pytest_cache/
-
+.pytest_cache
+GPbot/__init__.pyc
+GPbot/api_requests.pyc
+GPbot/views.pyc
+config.pyc
