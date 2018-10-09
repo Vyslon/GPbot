@@ -1,0 +1,8 @@
+.pytest_cache/README.md
+.pytest_cache/v/cache/lastfailed
+.pytest_cache/v/cache/nodeids
+GPbot/__init__.pyc
+GPbot/api_requests.pyc
+GPbot/views.pyc
+__pycache__/test_api_requests.cpython-27-PYTEST.pyc
+config.pyc

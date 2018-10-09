@@ -3,16 +3,15 @@ import requests
 from unicodedata import normalize
 
 
-def get_lat_lng(adress, municipality, region):
+def get_lat_lng(adress):
     """
         Get latitude and longitude from an Adress using google maps api
         - Return a tuple : (latitude, longitude)
     """
     adress.replace(" ", "+")
-    municipality.replace(" ", "+")
-    region.replace(" ", "+")
     URL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + \
-          adress + "," + municipality + "," + region + "&key=API_KEY"
+          adress + "&key=API_KEY"
+
     geocoding_maps_return = requests.get(URL).json()
     lat = geocoding_maps_return['results'][0]['geometry']['location']['lat']
     lng = geocoding_maps_return['results'][0]['geometry']['location']['lng']
@@ -34,3 +33,5 @@ def get_location_info(location):
     returned_info = location_infos['query']['pages'][page_id]['extract']
 
     return returned_info.encode('utf-8')
+
+print(get_lat_lng("1600 amphitheatre parkway"))
