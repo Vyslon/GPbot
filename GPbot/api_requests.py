@@ -33,5 +33,3 @@ def get_location_info(location):
     returned_info = location_infos['query']['pages'][page_id]['extract']
 
     return returned_info.encode('utf-8')
-
-print(get_lat_lng("1600 amphitheatre parkway"))
