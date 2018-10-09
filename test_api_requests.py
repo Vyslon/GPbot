@@ -11,3 +11,5 @@ def test_api_return(monkeypatch):
     assert get_lat_lng("1600 amphitheatre parkway") == lat_lng_result
 
     assert get_location_info("googleplex")[0:45] == location_desc
+
+#TODO : test formatted_adress result with a society name on input 
