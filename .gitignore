@@ -6,3 +6,5 @@ GPbot/api_requests.pyc
 GPbot/views.pyc
 __pycache__/test_api_requests.cpython-27-PYTEST.pyc
 config.pyc
+GPbot/.parsing.py.swp
+
