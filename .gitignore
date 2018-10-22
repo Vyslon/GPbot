@@ -7,4 +7,7 @@ GPbot/views.pyc
 __pycache__/test_api_requests.cpython-27-PYTEST.pyc
 config.pyc
 GPbot/.parsing.py.swp
-
+GPbot/__pycache__/__init__.cpython-36.pyc
+GPbot/parsing.pyc
+__pycache__/test_api_requests.cpython-36-PYTEST.pyc
+__pycache__/test_parsing.cpython-27-PYTEST.pyc

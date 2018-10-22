@@ -7,10 +7,74 @@
         width: 80%;
         margin-left: 10%;
        }
+      body {
+        background: #80dfff !important;
+      }
+       .gp_header {
+         font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+         background-color: #ff6666;
+         color: black;
+         text-align: center;
+         border-radius: 10px / 10px;
+         box-shadow: 0px 2px 10px black;
+       }
+       .gp_form {
+         font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+         background-color: #ff6666;
+         color: black;
+         text-align: center;
+         border-radius: 10px / 10px;
+         box-shadow: 0px 2px 10px black;
+       }
+       p {
+         color: #ffffff;
+       }
     </style>
+    <meta charset="utf-8" />
+    <title>GrandPy Bot</title>
+    <link <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
   </head>
   <body>
-    <h3>{{location_name}}</h3>
+    <div class="container gp_header">
+      <header class="page-header">
+          <h1> GrandPy Bot <i class="em em-robot_face"></i><i class="em em-older_man"></i><h1>
+          <p>Découvrez le monde avec GrandpPy Bot le papy-robot!</p>
+      </header>
+    </div>
+    <div class="container gp_body">
+    </div>
+    <div class="container gp_form">
+      <form class="form-horizontal">
+        <fieldset>
+
+        <!-- Form Name -->
+        <legend>Pose une question à Grandpy Bot !</legend>
+
+        <!-- Textarea -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="textarea"></label>
+          <div class="col-md-4">
+            <textarea class="form-control" id="textarea" name="textarea"></textarea>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="singlebutton"></label>
+          <div class="col-md-4">
+            <button id="singlebutton" name="singlebutton" class="btn btn-default">Envoyer</button>
+          </div>
+        </div>
+
+        </fieldset>
+      </form>
+
+    </div>
+
+
+
+    <!-- <h3>{{location_name}}</h3>
     <div id="map"></div>
     <script>
 // Initialize and add the map
@@ -25,6 +89,6 @@ function initMap() {
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap">
-    </script>
+    </script> -->
   </body>
 </html>
