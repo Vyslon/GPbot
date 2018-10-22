@@ -1,4 +1,4 @@
-from GPbot.parsing import parseit
+from GPbot.parsing import parseIt
 
 
 def test_parseIt():
