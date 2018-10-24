@@ -7,8 +7,9 @@
         width: 80%;
         margin-left: 10%;
        }
+      * {-moz-box-sizing: border-box; box-sizing: border-box;}
       body {
-        background: #80dfff !important;
+        background: #80bfff !important;
       }
        .gp_header {
          font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -26,8 +27,28 @@
          border-radius: 10px / 10px;
          box-shadow: 0px 2px 10px black;
        }
+       .gp_body {
+         background-color: #fafafa;
+         box-shadow: 0px 2px 5px black;
+         position: relative;
+         bottom: 0px;
+         top: 0px;
+       }
        p {
-         color: #ffffff;
+         color: white;
+       }
+       .gp_footer {
+         font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+         background-color: #fafafa;
+         width: 100%;
+       }
+       .pdp {
+         color: #555555;
+       }
+       .pdp_legend {
+         color: black;
+         font-size: 1.2em;
+         margin-bottom: 0.3%;
        }
     </style>
     <meta charset="utf-8" />
@@ -37,19 +58,26 @@
   </head>
   <body>
     <div class="container gp_header">
-      <header class="page-header">
+      <header class="page-header row">
+        <div class="col-xs-12">
           <h1> GrandPy Bot <i class="em em-robot_face"></i><i class="em em-older_man"></i><h1>
           <p>Découvrez le monde avec GrandpPy Bot le papy-robot!</p>
+        </div>
       </header>
     </div>
     <div class="container gp_body">
+      <div class="row">
+        <div class="col-sm-12">
+        <p><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>
+        </div>
+      </div>
     </div>
     <div class="container gp_form">
-      <form class="form-horizontal">
+      <form class="form-horizontal row">
         <fieldset>
 
         <!-- Form Name -->
-        <legend>Pose une question à Grandpy Bot !</legend>
+        <legend class="col-xs-12">Pose une question à Grandpy Bot !</legend>
 
         <!-- Textarea -->
         <div class="form-group">
@@ -71,6 +99,18 @@
       </form>
 
     </div>
+    <footer class="container-fluid gp_footer fixed-bottom">
+      <div class="row">
+      <address class="col-xs-12">
+        <legend class="pdp_legend">Développé par :</legend>
+        <p class="pdp">
+        Thomas SANTONI <br/>
+        Projet GitHub : <a href="https://github.com/Vyslon/GPbot" target="_blank">github.com/Vyslon/GPbot</a> <br/>
+        Profil LinkedIn : <a href="https://www.linkedin.com/in/thomas-santoni-354b8814a/" target="_blank">Thomas SANTONI</a>
+      </p>
+      </address>
+    </div>
+    </footer>
 
 
 
