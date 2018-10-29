@@ -60,7 +60,6 @@ scandir==1.9.0
 SecretStorage==2.3.1
 six==1.11.0
 SQLAlchemy==1.2.7
-subprocess32==3.2.7
 tablib==0.12.1
 unicodecsv==0.14.1
 urlgrabber==3.10.2
