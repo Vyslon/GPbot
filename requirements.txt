@@ -26,8 +26,6 @@ keyrings.alt==3.0
 MarkupSafe==1.0
 matplotlib==2.1.1
 more-itertools==4.3.0
-mysql-connector-python==2.1.6
-mysql-utilities==1.6.4
 numpy==1.13.3
 odfpy==1.3.6
 olefile==0.45.1
