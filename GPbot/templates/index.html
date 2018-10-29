@@ -58,32 +58,39 @@
        }
        @media all and (orientation: portrait)
        {
-         .gp_header, .gp_body, .gp_form {
+         /* .gp_header, .gp_body, .gp_form {
            margin-left: 0 !important;
            margin-right: 0 !important;
            padding-left: 0 !important;
            padding-right: 0 !important;
            width: 100% !important;
          }
-         .gp_footer {
-           font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-           background-color: #fafafa;
-           position: absolute;
-           bottom: 0;
-           width: 100%;
-         }
+       }*/
+       .gp_header {
+         height: 350px;
+         width: 100% !important;
        }
-       .pdp {
-         color: #555555;
+       .gp_body {
+         height: 1300px;
+         width: 100% !important;
        }
-       .pdp_legend {
-         color: black;
-         font-size: 1.2em;
-         margin-bottom: 0.3%;
+       .gp_form {
+         height: 600px;
+         width: 100% !important;
        }
-       h1 {
-         font-size: 3em;
+       .form-group {
+         margin-left: auto !important;
+         margin-right: auto !important;
+         height: 200px;
        }
+     }
+     .pdp_legend {
+       color: black;
+       font-size: 1.2em;
+       margin-bottom: 0.3%;
+     }
+     .pdp {
+       color: #555555;
      }
     </style>
     <meta charset="utf-8" />
@@ -118,7 +125,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="textarea"></label>
           <div class="col-md-4">
-            <textarea class="form-control" id="textarea" name="textarea"></textarea>
+            <textarea class="form-control" id="textarea" name="textarea" rows="8"></textarea>
           </div>
         </div>
 
