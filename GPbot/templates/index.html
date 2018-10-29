@@ -38,7 +38,13 @@
        p {
          color: white;
        }
-       @media all and (orientation: landscape)
+       .gp_footer {
+         background-color: #fafafa;
+         position: absolute;
+         bottom: 0;
+         width: 100%;
+       }
+       @media all and (orientation: landscape) and (max-device-width: 1280px)
        {
          .gp_footer {
            background-color: #fafafa;
@@ -52,6 +58,7 @@
          .gp_header, .gp_body, .gp_form {
            margin-left: 0 !important;
            margin-right: 0 !important;
+           padding-right: 0 !important;
            width: 100% !important;
          }
          .gp_footer {
