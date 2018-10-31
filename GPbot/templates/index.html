@@ -36,16 +36,30 @@
          position: relative;
          bottom: 0px;
          top: 0px;
+         height: 650px;
+         overflow-y: scroll;
        }
        p {
          color: white;
        }
+       #dialog p {
+         color: #5F6368;
+         font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+         font-size: 1.2em;
+         padding-top: 5px;
+       }
+       /* #dialog p .answer {
+         // TODO
+       } */
        .gp_footer {
          background-color: #fafafa;
          position: absolute;
          bottom: 0;
          width: 100%;
          text-align: center;
+       }
+       #dialog {
+         padding-left: 20px;
        }
        @media all and (orientation: landscape) and (max-device-width: 1280px)
        {
@@ -107,8 +121,7 @@
     </div>
     <div class="container gp_body">
       <div class="row">
-        <div>
-        <p><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>
+        <div id="dialog">
         </div>
       </div>
     </div>
@@ -123,7 +136,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="textarea"></label>
           <div class="col-md-4">
-            <textarea class="form-control" id="textarea" name="textarea" rows="8"></textarea>
+            <textarea class="form-control" id="question" name="textarea" rows="8"></textarea>
           </div>
         </div>
 
@@ -131,7 +144,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="singlebutton"></label>
           <div class="col-md-4">
-            <button id="singlebutton" name="singlebutton" class="btn btn-default">Envoyer</button>
+            <button id="ask" name="singlebutton" class="btn btn-default">Envoyer</button>
           </div>
         </div>
 
@@ -170,5 +183,7 @@ function initMap() {
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap">
     </script> -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+       <script src="../static/js/dialogBox.js"></script>
   </body>
 </html>
