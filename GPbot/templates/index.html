@@ -46,11 +46,9 @@
          color: #5F6368;
          font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
          font-size: 1.2em;
-         padding-top: 5px;
+         padding-top: 10px;
+         padding-bottom: 10px;
        }
-       /* #dialog p .answer {
-         // TODO
-       } */
        .gp_footer {
          background-color: #fafafa;
          position: absolute;
@@ -104,6 +102,9 @@
      .pdp {
        color: #555555;
      }
+     .glyphicon {
+       margin-right: 5px;
+     }
     </style>
     <meta charset="utf-8" />
     <title>GrandPy Bot</title>
@@ -144,7 +145,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="singlebutton"></label>
           <div class="col-md-4">
-            <button id="ask" name="singlebutton" class="btn btn-default">Envoyer</button>
+            <button id="ask" name="singlebutton" class="btn btn-default"><span class="glyphicon glyphicon-ok-sign"></span>Envoyer</button>
           </div>
         </div>
 
