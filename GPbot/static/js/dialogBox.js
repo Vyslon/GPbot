@@ -12,7 +12,6 @@ $("#ask").click(function(e){
   var m = date.getMinutes();
   if (m<10) {m = "0" + m}
   paragraph.textContent = h + ":" + m + " | Vous : " + questionContent.value;
-  questionContent.value = "";
   dialogBox.appendChild(paragraph);
   document.getElementsByClassName("gp_body")[0].scrollTop = document.getElementsByClassName("gp_body")[0].scrollHeight;
   //Loading Icon
@@ -23,9 +22,24 @@ $("#ask").click(function(e){
   m = date.getMinutes();
   if (m<10) {m = "0" + m}
   paragraphAnswer.style.backgroundColor = "rgba(95, 99, 104, 0.7)";
-  paragraphAnswer.textContent = h + ":" + m + " | GrandPy Bot : test __";
-  dialogBox.appendChild(paragraphAnswer);
-  document.getElementsByClassName("gp_body")[0].scrollTop = document.getElementsByClassName("gp_body")[0].scrollHeight;
+  $.post("/parse",
+  {
+    text: questionContent.value
+  },
+  function(data, status) {
+    if (status >= 200 && status < 400) {
+      $(".btn-default").css("display", "none");
+      obj = JSON.parse(data);
+      console.log("test");
+      paragraphAnswer.textContent = h + ":" + m + " | GrandPy Bot : " + obj.parsedText;
+      dialogBox.appendChild(paragraphAnswer);
+      document.getElementsByClassName("gp_body")[0].scrollTop = document.getElementsByClassName("gp_body")[0].scrollHeight;
+      questionContent.value = "";
+      $(".btn-default").css("display", "inline-block");
+    } else {
+      console.error("Status : " + status)
+    }
+  });
 });
 
 //Flask "requests" here ?

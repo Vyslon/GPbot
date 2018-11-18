@@ -11,12 +11,15 @@ def get_lat_lng_formated_name(address):
     """
     address.replace(" ", "+")
     URL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + \
-          address + "&key=APIKEY"
+          address.title() + "&key=APIKEY"
 
     geocoding_maps = requests.get(URL).json()
-    lat = geocoding_maps['results'][0]['geometry']['location']['lat']
-    lng = geocoding_maps['results'][0]['geometry']['location']['lng']
-    address = geocoding_maps['results'][0]['formatted_address'].encode('utf-8')
+    try:
+        lat = float(geocoding_maps['results'][0]['geometry']['location']['lat'])
+        lng = float(geocoding_maps['results'][0]['geometry']['location']['lng'])
+        address = geocoding_maps['results'][0]['formatted_address'].encode('utf-8')
+    except:
+        lat, lng, address = 0, 0, 0
     return (lat, lng, address)
 
 
