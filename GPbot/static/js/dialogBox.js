@@ -27,18 +27,23 @@ $("#ask").click(function(e){
     text: questionContent.value
   },
   function(data, status) {
-    if (status >= 200 && status < 400) {
-      $(".btn-default").css("display", "none");
-      obj = JSON.parse(data);
-      console.log("test");
-      paragraphAnswer.textContent = h + ":" + m + " | GrandPy Bot : " + obj.parsedText;
-      dialogBox.appendChild(paragraphAnswer);
-      document.getElementsByClassName("gp_body")[0].scrollTop = document.getElementsByClassName("gp_body")[0].scrollHeight;
-      questionContent.value = "";
-      $(".btn-default").css("display", "inline-block");
-    } else {
-      console.error("Status : " + status)
-    }
+    var loadingIcon = document.createElement("IMG");
+    loadingIcon.setAttribute("src", "https://www.freeiconspng.com/uploads/load-icon-png-8.png");
+    loadingIcon.setAttribute("width", 30);
+    loadingIcon.classList.add("rotate");
+    var gp_form = $(".button_send")[0];
+    gp_form.appendChild(loadingIcon);
+    console.log("status = " + status);
+    $(".btn-default").addClass("disabled");
+    obj = JSON.parse(data);
+    paragraphAnswer.textContent = h + ":" + m + " | GrandPy Bot : " + obj.parsedText;
+    dialogBox.appendChild(paragraphAnswer);
+    document.getElementsByClassName("gp_body")[0].scrollTop = document.getElementsByClassName("gp_body")[0].scrollHeight;
+    questionContent.value = "";
+    setTimeout(function () {
+      $(".btn-default").removeClass("disabled");
+      $(".rotate").remove();
+    }, 2000);
   });
 });
 
