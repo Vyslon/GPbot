@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
-from parsing import parseIt
-from api_requests import get_lat_lng_formated_name, get_location_info
+from .parsing import parseIt
+from .api_requests import get_lat_lng_formated_name, get_location_info
 import json
 
 app = Flask(__name__)
@@ -30,3 +30,4 @@ def parse():
     return json.dumps({"parsedText" : parsedText, "latitude" : lat_lng_name[0],
     "longitude" : lat_lng_name[1], "formatted_name" : lat_lng_name[2],
     "info" : info})
+

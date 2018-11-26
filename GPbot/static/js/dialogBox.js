@@ -36,7 +36,11 @@ $("#ask").click(function(e){
     console.log("status = " + status);
     $(".btn-default").addClass("disabled");
     obj = JSON.parse(data);
-    paragraphAnswer.textContent = h + ":" + m + " | GrandPy Bot : " + obj.parsedText;
+    paragraphAnswer.textContent = h + ":" + m + " | GrandPy Bot : Voici tout ce que je peux te dire sur " + obj.parsedText + " : ";
+    if (obj.formatted_name != 0) {
+      paragraphAnswer.textContent += obj.parsedText + " ce situe " + obj.formatted_name + ". ";
+    }
+    paragraphAnswer.textContent += " " + obj.info;
     dialogBox.appendChild(paragraphAnswer);
     document.getElementsByClassName("gp_body")[0].scrollTop = document.getElementsByClassName("gp_body")[0].scrollHeight;
     questionContent.value = "";
@@ -46,6 +50,3 @@ $("#ask").click(function(e){
     }, 2000);
   });
 });
-
-//Flask "requests" here ?
-//USE BEAUTIFY
