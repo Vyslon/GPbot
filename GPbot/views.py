@@ -10,7 +10,6 @@ app.config.from_object('config')
 
 @app.route('/')
 def index():
-    # return "var from config.py  :  " + app.config['TEST_VAR']
     return render_template('index.html')
 
 
@@ -30,4 +29,3 @@ def parse():
     return json.dumps({"parsedText" : parsedText, "latitude" : lat_lng_name[0],
     "longitude" : lat_lng_name[1], "formatted_name" : lat_lng_name[2],
     "info" : info})
-
