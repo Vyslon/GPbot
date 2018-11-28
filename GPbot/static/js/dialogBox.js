@@ -4,20 +4,17 @@ map_dom = document.createElement("div");
 map_dom.setAttribute("id", "map");
 dialogBox.appendChild(map_dom);
 var map;
+var marker;
 
 function initMap(){
-  // The map, centered on the location
   map = new google.maps.Map(
     document.getElementById('map'), {
       zoom: 14
     });
   map.setCenter({lat: -34.397, lng: 150.644});
-  // The marker, positioned at the location
-  // var marker = new google.maps.Marker({
-  //   position: location,
-  //   map: map
-  // });
 }
+
+$("#map").hide();
 
 $("#ask").click(function(e) {
   e.preventDefault();
@@ -71,30 +68,28 @@ $("#ask").click(function(e) {
         }
         paragraphAnswer.textContent += " " + obj.info;
         dialogBox.appendChild(paragraphAnswer);
-        console.log(obj.latitude);
-        // location = new google.maps.LatLng(obj.latitude, obj.longitude);
-        map.setCenter({lat: obj.latitude, lng: obj.longitude});
-        var marker = new google.maps.Marker({
-          // position: location,
-          position: {lat: obj.latitude, lng: obj.longitude},
-          map: map
-        });
-
-        // if ((obj.latitude !== 0) || (obj.longitude !== 0)) {
-        //   if (document.getElementById('map') != null) {
-        //     document.getElementById('map').remove();
-        //   }
-          // map_dom = document.createElement("div");
-          // map_dom.setAttribute("id", "map");
-          // dialogBox.appendChild(map_dom);
-        // }
+        if ((obj.latitude !== 0) || (obj.longitude !== 0)) {
+          map.setCenter({lat: obj.latitude, lng: obj.longitude});
+          if (marker) {
+            marker.setPosition({lat: obj.latitude, lng: obj.longitude});
+          }
+          else {
+            marker = new google.maps.Marker({
+              position: {lat: obj.latitude, lng: obj.longitude},
+              map: map
+            });
+          }
+          $("#map").show();
+          $("#map").css("position", "relative");
+          dist = document.getElementsByClassName("gp_body")[0].scrollHeight + "px"
+          $("#map").css("top", dist)
+        }
       }
       document.getElementsByClassName("gp_body")[0].scrollTop = document.getElementsByClassName("gp_body")[0].scrollHeight;
       questionContent.value = "";
       setTimeout(function() {
         $(".btn-default").removeClass("disabled");
         $(".rotate").remove();
-        obj.formatted_name = "";
-      }, 2000);
+      }, 1000);
     });
 });
