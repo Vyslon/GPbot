@@ -59,7 +59,7 @@ $("#ask").click(function(e) {
       console.log("status = " + status);
       $(".btn-default").addClass("disabled");
       obj = JSON.parse(data);
-      if ((obj.parsedText.length <= 1) && (obj.info <= 1) && (obj.formatted_name.length <= 1)) {
+      if ((obj.parsedText.length <= 1) || (obj.formatted_name == 0) {
         paragraphAnswer.textContent = h + ":" + m + " | GrandPy Bot : Je ne suis pas certains de comprendre ta question!";
         dialogBox.appendChild(paragraphAnswer);
       }
