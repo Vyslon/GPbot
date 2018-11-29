@@ -5,6 +5,7 @@ map_dom.setAttribute("id", "map");
 dialogBox.appendChild(map_dom);
 var map;
 var marker;
+var nbRequests = 0;
 
 function initMap(){
   map = new google.maps.Map(
@@ -21,6 +22,7 @@ $("#ask").click(function(e) {
   var questionContent = document.getElementById("question");
   var paragraph = document.createElement("p");
   var paragraphAnswer = document.createElement("p");
+  paragraphAnswer.classList.add("answer");
   var date = new Date();
   var h = date.getHours();
   if (h < 10) {
@@ -80,9 +82,8 @@ $("#ask").click(function(e) {
             });
           }
           $("#map").show();
-          $("#map").css("position", "relative");
-          dist = document.getElementsByClassName("gp_body")[0].scrollHeight + "px"
-          $("#map").css("top", dist)
+          $("#map").insertAfter(document.getElementsByClassName("answer")[nbRequests]);
+          nbRequests += 1;
         }
       }
       document.getElementsByClassName("gp_body")[0].scrollTop = document.getElementsByClassName("gp_body")[0].scrollHeight;
