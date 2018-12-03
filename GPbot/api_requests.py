@@ -10,12 +10,20 @@ def get_lat_lng_formated_name(address):
         - Return a tuple : (latitude, longitude, formatted_name)
     """
     address.replace(" ", "+")
-    geocoding_maps = requests.get("https://maps.googleapis.com/maps/api/geocode/json", params={"address" : address.title(), "key" : "APIKEY"}, headers={"content-type" : "application/json;charset=UTF-8", "Accept-language" : "fr"}).json()
+    geocoding_maps = requests.get(
+     "https://maps.googleapis.com/maps/api/geocode/json",
+     params={"address": address.title(), "key": "APIKEY"},
+     headers={"content-type": "application/json;charset=UTF-8",
+              "Accept-language": "fr"}).json()
     try:
-        lat = float(geocoding_maps['results'][0]['geometry']['location']['lat'])
-        lng = float(geocoding_maps['results'][0]['geometry']['location']['lng'])
+        lat = float(
+         geocoding_maps['results'][0]['geometry']['location']['lat'])
+        lng = float(
+         geocoding_maps['results'][0]['geometry']['location']['lng'])
         address = geocoding_maps['results'][0]['formatted_address']
-    except:
+    except NameError:
+        lat, lng, address = 0, 0, 0
+    except IndexError:
         lat, lng, address = 0, 0, 0
     return (lat, lng, address)
 
@@ -32,6 +40,9 @@ def get_location_info(location):
                                   location +
                                   "&utf8&indexpageids").json()
     page_id = str(location_infos['query']['pageids'][0])
-    returned_info = location_infos['query']['pages'][page_id]['extract']
+    try:
+        returned_info = location_infos['query']['pages'][page_id]['extract']
+    except KeyError:
+        pass
 
     return returned_info

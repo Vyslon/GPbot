@@ -7,12 +7,15 @@ var map;
 var marker;
 var nbRequests = 0;
 
-function initMap(){
+function initMap() {
   map = new google.maps.Map(
     document.getElementById('map'), {
       zoom: 14
     });
-  map.setCenter({lat: -34.397, lng: 150.644});
+  map.setCenter({
+    lat: -34.397,
+    lng: 150.644
+  });
 }
 
 $("#map").hide();
@@ -62,8 +65,7 @@ $("#ask").click(function(e) {
       if ((obj.parsedText.length <= 1) || (obj.formatted_name == 0)) {
         paragraphAnswer.textContent = h + ":" + m + " | GrandPy Bot : Je ne suis pas certains de comprendre ta question!";
         dialogBox.appendChild(paragraphAnswer);
-      }
-      else {
+      } else {
         paragraphAnswer.textContent = h + ":" + m + " | GrandPy Bot : Voici tout ce que je peux te dire sur " + obj.parsedText + " : ";
         if (obj.formatted_name != 0) {
           paragraphAnswer.textContent += obj.parsedText + " ce situe " + obj.formatted_name + ". ";
@@ -71,13 +73,21 @@ $("#ask").click(function(e) {
         paragraphAnswer.textContent += " " + obj.info;
         dialogBox.appendChild(paragraphAnswer);
         if ((obj.latitude !== 0) || (obj.longitude !== 0)) {
-          map.setCenter({lat: obj.latitude, lng: obj.longitude});
+          map.setCenter({
+            lat: obj.latitude,
+            lng: obj.longitude
+          });
           if (marker) {
-            marker.setPosition({lat: obj.latitude, lng: obj.longitude});
-          }
-          else {
+            marker.setPosition({
+              lat: obj.latitude,
+              lng: obj.longitude
+            });
+          } else {
             marker = new google.maps.Marker({
-              position: {lat: obj.latitude, lng: obj.longitude},
+              position: {
+                lat: obj.latitude,
+                lng: obj.longitude
+              },
               map: map
             });
           }
@@ -89,8 +99,8 @@ $("#ask").click(function(e) {
       document.getElementsByClassName("gp_body")[0].scrollTop = document.getElementsByClassName("gp_body")[0].scrollHeight;
       questionContent.value = "";
     });
-    setTimeout(function() {
-      $(".btn-default").prop("disabled", false);
-      $(".rotate").remove();
-    }, 1500);
+  setTimeout(function() {
+    $(".btn-default").prop("disabled", false);
+    $(".rotate").remove();
+  }, 1500);
 });

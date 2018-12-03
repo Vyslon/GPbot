@@ -24,8 +24,9 @@ def parse():
     lat_lng_name = get_lat_lng_formated_name(parsedText)
     try:
         info = get_location_info(parsedText)
-    except:
+    except NameError:
         info = ""
-    return json.dumps({"parsedText" : parsedText, "latitude" : lat_lng_name[0],
-    "longitude" : lat_lng_name[1], "formatted_name" : lat_lng_name[2],
-    "info" : info})
+    return json.dumps({"parsedText": parsedText, "latitude": lat_lng_name[0],
+                       "longitude": lat_lng_name[1],
+                       "formatted_name": lat_lng_name[2],
+                       "info": info})
