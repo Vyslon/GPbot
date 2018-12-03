@@ -82,7 +82,7 @@ $("#ask").click(function(e) {
             });
           }
           $("#map").show();
-          $("#map").insertAfter(document.getElementsByClassName("answer")[nbRequests]);
+          $("#map").insertAfter(document.getElementsByClassName("answer")[nbRequests]).delay(300);
           nbRequests += 1;
         }
       }
