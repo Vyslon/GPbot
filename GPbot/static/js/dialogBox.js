@@ -18,7 +18,14 @@ function initMap(){
 $("#map").hide();
 
 $("#ask").click(function(e) {
+  $(".btn-default").prop("disabled", true);
   e.preventDefault();
+  var loadingIcon = document.createElement("IMG");
+  loadingIcon.setAttribute("src", "https://www.freeiconspng.com/uploads/load-icon-png-8.png");
+  loadingIcon.setAttribute("width", 30);
+  loadingIcon.classList.add("rotate");
+  var gp_form = $(".button_send")[0];
+  gp_form.appendChild(loadingIcon);
   var questionContent = document.getElementById("question");
   var paragraph = document.createElement("p");
   var paragraphAnswer = document.createElement("p");
@@ -50,15 +57,7 @@ $("#ask").click(function(e) {
       text: questionContent.value
     },
     function(data, status) {
-      $(".rotate").remove();
-      var loadingIcon = document.createElement("IMG");
-      loadingIcon.setAttribute("src", "https://www.freeiconspng.com/uploads/load-icon-png-8.png");
-      loadingIcon.setAttribute("width", 30);
-      loadingIcon.classList.add("rotate");
-      var gp_form = $(".button_send")[0];
-      gp_form.appendChild(loadingIcon);
       console.log("status = " + status);
-      $(".btn-default").addClass("disabled");
       obj = JSON.parse(data);
       if ((obj.parsedText.length <= 1) || (obj.formatted_name == 0)) {
         paragraphAnswer.textContent = h + ":" + m + " | GrandPy Bot : Je ne suis pas certains de comprendre ta question!";
@@ -86,9 +85,12 @@ $("#ask").click(function(e) {
           $("#map").insertAfter(document.getElementsByClassName("answer")[nbRequests]);
           nbRequests += 1;
         }
-        $(".btn-default").removeClass("disabled");
       }
       document.getElementsByClassName("gp_body")[0].scrollTop = document.getElementsByClassName("gp_body")[0].scrollHeight;
       questionContent.value = "";
     });
+    setTimeout(function() {
+      $(".btn-default").prop("disabled", false);
+      $(".rotate").remove();
+    }, 1500);
 });
