@@ -50,6 +50,7 @@ $("#ask").click(function(e) {
       text: questionContent.value
     },
     function(data, status) {
+      $(".rotate").remove();
       var loadingIcon = document.createElement("IMG");
       loadingIcon.setAttribute("src", "https://www.freeiconspng.com/uploads/load-icon-png-8.png");
       loadingIcon.setAttribute("width", 30);
@@ -85,12 +86,9 @@ $("#ask").click(function(e) {
           $("#map").insertAfter(document.getElementsByClassName("answer")[nbRequests]);
           nbRequests += 1;
         }
+        $(".btn-default").removeClass("disabled");
       }
       document.getElementsByClassName("gp_body")[0].scrollTop = document.getElementsByClassName("gp_body")[0].scrollHeight;
       questionContent.value = "";
-      setTimeout(function() {
-        $(".btn-default").removeClass("disabled");
-        $(".rotate").remove();
-      }, 1000);
     });
 });
