@@ -1,7 +1,7 @@
 # GPbot
 **GrandPy Bot is a bot that will smartly answer on your questions about enterprises or locations !**
 
-All you have to do is : send your question to GrandPy bot ! (in French), or just send keywords like "google" or "Paris"
+All you have to do is : Enter your text on the form and send your question to GrandPy bot ! (in French), or just send keywords like "google" or "Paris", everything will display on the Dialog Box, with the time corresponding to each message!
 
 
 The GrandPy bot is made up of : 
