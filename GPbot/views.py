@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from .parsing import parseIt
+from .parsing import parseWithStopWords
 from .api_requests import get_lat_lng_formated_name, get_location_info
 import json
 
@@ -20,7 +20,7 @@ if __name__ == "__main__":
 @app.route('/parse', methods=['POST'])
 def parse():
     text = request.form['text']
-    parsedText = parseIt(text)
+    parsedText = parseWithStopWords(text)
     lat_lng_name = get_lat_lng_formated_name(parsedText)
     try:
         info = get_location_info(parsedText)

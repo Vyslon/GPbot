@@ -2,156 +2,13 @@
 <html>
 
 <head>
-  <style>
-    #map {
-      height: 400px;
-      width: 100%;
-    }
-
-    * {
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-
-    * {
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #80bfff !important;
-      width: 100%;
-    }
-
-    #ask {
-      margin-bottom: 5px;
-    }
-
-    .rotate {
-      animation-duration: 2s;
-      animation-name: rotation;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-    }
-
-    @keyframes rotation {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .gp_header {
-      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-      background-color: #ff6666;
-      color: black;
-      text-align: center;
-      border-radius: 10px / 10px;
-      box-shadow: 0px 2px 10px black;
-    }
-
-    .gp_form {
-      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-      background-color: #ff6666;
-      color: black;
-      text-align: center;
-      border-radius: 10px / 10px;
-      box-shadow: 0px 2px 10px black;
-      padding-top: 10px;
-    }
-
-    .gp_body {
-      background-color: #fafafa;
-      box-shadow: 0px 2px 5px black;
-      position: relative;
-      bottom: 0px;
-      top: 0px;
-      height: 650px;
-      overflow-y: scroll;
-    }
-
-    p {
-      color: white;
-    }
-
-    #dialog p {
-      color: #5F6368;
-      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-      font-size: 1.2em;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 10px;
-    }
-
-    .gp_footer {
-      background-color: #fafafa;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    }
-
-    #dialog {
-      padding-left: 20px;
-    }
-
-    @media screen and (max-device-width: 1024px) {
-      #dialog {
-        padding-left: 0;
-      }
-      
-      .gp_header {
-        height: 15% !important;
-        width: 100% !important;
-        font-size: 3em !important;
-      }
-
-      .gp_body {
-        height: 900px;
-        width: 100% !important;
-      }
-
-      .gp_form {
-        height: 370px;
-        width: 100% !important;
-      }
-
-      .form-group {
-        margin-left: auto !important;
-        margin-right: auto !important;
-        height: 200px;
-      }
-
-      .gp_footer {
-        background-color: #fafafa;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
-    }
-
-    .pdp_legend {
-      color: black;
-      font-size: 1.2em;
-      margin-bottom: 0.3%;
-    }
-
-    .pdp {
-      color: #555555;
-      margin-left: 10px;
-    }
-
-    .glyphicon {
-      margin-right: 5px;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
   <title>GrandPy Bot</title>
   <link <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <link rel="icon" href="{{ url_for('static', filename='img/old-man.png') }}" />
 </head>
 
 <body>
@@ -204,7 +61,8 @@
         <p class="pdp">
           Thomas SANTONI <br />
           Projet GitHub : <a href="https://github.com/Vyslon/GPbot" target="_blank">github.com/Vyslon/GPbot</a> <br />
-          Profil LinkedIn : <a href="https://www.linkedin.com/in/thomas-santoni-354b8814a/" target="_blank">Thomas SANTONI</a>
+          Profil LinkedIn : <a href="https://www.linkedin.com/in/thomas-santoni-354b8814a/" target="_blank">Thomas SANTONI</a> <br />
+          Icon made by <a href="https://www.flaticon.com/authors/twitter" title="Twitter">Twitter</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
         </p>
       </address>
     </div>
