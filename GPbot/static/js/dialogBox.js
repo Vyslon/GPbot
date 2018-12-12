@@ -68,7 +68,7 @@ $("#ask").click(function(e) {
       } else {
         paragraphAnswer.textContent = h + ":" + m + " | GrandPy Bot : Voici tout ce que je peux te dire sur " + obj.parsedText + " : ";
         if (obj.formatted_name != 0) {
-          paragraphAnswer.textContent += obj.parsedText + " ce situe " + obj.formatted_name + ". ";
+          paragraphAnswer.textContent += obj.parsedText + " se situe " + obj.formatted_name + ". ";
         }
         paragraphAnswer.textContent += " " + obj.info;
         dialogBox.appendChild(paragraphAnswer);
