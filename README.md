@@ -1,4 +1,6 @@
 https://gpbot26.herokuapp.com
+(APIs Disabled)
+
 # GPbot
 **GrandPy Bot is a bot that will smartly answer on your questions about enterprises or locations !**
 
