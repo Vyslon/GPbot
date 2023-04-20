@@ -1,20 +1,15 @@
-# House Prices - Advanced Regression Techniques Kaggle Challenge
+https://gpbot26.herokuapp.com
+(APIs Disabled)
+# GPbot
+**GrandPy Bot is a bot that will smartly answer on your questions about enterprises or locations !**
 
-## Description
+All you have to do is : Enter your text on the form and send your question to GrandPy bot ! (in French), or just send keywords like "google" or "Paris", everything will display on the Dialog Box, with the time corresponding to each message!
 
-This is our (with Josephir) attempt to the kaggle challenge [House prices - Advanced Regression Techniques][challenge] as part of our computer science bachelor at [Université Claude Bernard Lyon 1][university].
-The goal of the challenge was to use Machine Learning to predict the final price for homes using 80 qualitative and quantitative variables.
+The GrandPy bot is made up of : 
+ - [ ] An advanced parsing function which will filter your text and delete useless words, this function is optimized for the French language
 
-Notebook : https://www.kaggle.com/code/vyslon/australia-house-prices
+ - [ ] A function that is calling google Maps API, GrandPy Bot will display the address of the location or the headquarter of the enterprise (if the API find it)
 
-## Techniques and methods used
+ - [ ] A function that is calling Wikimedia API to provide you information about the locations or enterprises
 
-<ul>
-  <li>Models : LGBMRegressor, GradientBoostingRegressor, XGBRegressor</li>
-  <li>Stacking</li>
-  <li>Feature Engineering</li>
-  <li>Grid Search</li>
-</ul>
-
-[challenge]: https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
-[university]: http://licence-info.univ-lyon1.fr/
+ - [ ] A funtion that will display a Google Maps map of what you asked for if Google API is finding the exact location!
